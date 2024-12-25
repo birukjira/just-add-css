@@ -18,7 +18,7 @@
       <section>
         <h2>Welcome to my website</h2>
         <p>This is a sample website created using Just Add CSS.</p>
-        <button onclick="toggleCSS()" id="button">Toggle CSS</button>
+        <button onclick="toggleCSS()" id="button">Toggle Enabled CSS</button>
       </section>
     </main>
     <footer>
@@ -27,15 +27,16 @@
     <script>
       let addCSS = false;
       const head = document.getElementById("head");
+      const button = document.getElementById("button");
       function toggleCSS() {
         if (addCSS) {
           head.innerHTML = `<title>Just Add CSS</title>`;
           addCSS = !addCSS;
-          console.log(`addCSS: ${addCSS}`);
+          button.innerHTML = "Toggle Enabled CSS";
         } else {
           head.innerHTML = `<title>Just Add CSS</title> \n<link rel="stylesheet" type="text/css" href="./styles.css" />`;
           addCSS = !addCSS;
-          console.log(`addCSS: ${addCSS}`);
+          button.innerHTML = "Toggle Disabled CSS";
         }
       }
     </script>
