@@ -21,27 +21,23 @@
       <section>
         <h2>Welcome to my website</h2>
         <p>This is a sample website created using Just Add CSS.</p>
-        <button onclick="toggleCSS()" id="button">Toggle CSS</button>
+        <button onclick="addCSS()" id="button">Toggle CSS</button>
       </section>
     </main>
     <footer>
       <p>Copyright &copy; CiscoNet Technologies 2025</p>
     </footer>
     <script>
-      let addCSS = false;
-      const head = document.getElementById("head");
-      function toggleCSS() {
-        addCSS
-          ? (head.innerHTML = head.innerHTML.replace(
-              "",
-              '<link rel="stylesheet" type="text/css" href="./styles.css" />'
-            ))
-          : (head.innerHTML = head.innerHTML.replace(
-              '<link rel="stylesheet" type="text/css" href="./styles.css" />',
-              ""
-            ));
-        addCSS = !addCSS;
-        console.log(addCSS);
+      let counter = 0;
+      function addCSS() {
+        counter++;
+        if (counter % 2 !== 0) {
+          document.getElementById("head").innerHTML =
+            '  <title>Example HTML Website</title> \n<link rel="stylesheet" href="./styles.css" />';
+        } else {
+          document.getElementById("head").innerHTML =
+            "  <title>Example HTML Website</title> ";
+        }
       }
     </script>
   </body>
