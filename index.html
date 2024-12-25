@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head id="head">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Just Add CSS</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
   </head>
   <body>
     <header>
@@ -21,22 +18,24 @@
       <section>
         <h2>Welcome to my website</h2>
         <p>This is a sample website created using Just Add CSS.</p>
-        <button onclick="addCSS()" id="button">Toggle CSS</button>
+        <button onclick="toggleCSS()" id="button">Toggle CSS</button>
       </section>
     </main>
     <footer>
       <p>Copyright &copy; CiscoNet Technologies 2025</p>
     </footer>
     <script>
-      let counter = 0;
-      function addCSS() {
-        counter++;
-        if (counter % 2 !== 0) {
-          document.getElementById("head").innerHTML =
-            '  <title>Example HTML Website</title> \n<link rel="stylesheet" href="./styles.css" />';
+      let addCSS = false;
+      const head = document.getElementById("head");
+      function toggleCSS() {
+        if (addCSS) {
+          head.innerHTML = `<title>Just Add CSS</title>`;
+          addCSS = !addCSS;
+          console.log(`addCSS: ${addCSS}`);
         } else {
-          document.getElementById("head").innerHTML =
-            "  <title>Example HTML Website</title> ";
+          head.innerHTML = `<title>Just Add CSS</title> \n<link rel="stylesheet" type="text/css" href="./styles.css" />`;
+          addCSS = !addCSS;
+          console.log(`addCSS: ${addCSS}`);
         }
       }
     </script>
