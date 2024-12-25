@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head id="head">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just Add CSS</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Welcome to my website</h2>
+        <p>This is a sample website created using Just Add CSS.</p>
+        <button onclick="toggleCSS()" id="button">Toggle CSS</button>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright &copy; CiscoNet Technologies 2025</p>
+    </footer>
+    <script>
+      let addCSS = false;
+      const head = document.getElementById("head");
+      function toggleCSS() {
+        addCSS
+          ? (head.innerHTML = head.innerHTML.replace(
+              "",
+              '<link rel="stylesheet" type="text/css" href="./styles.css" />'
+            ))
+          : (head.innerHTML = head.innerHTML.replace(
+              '<link rel="stylesheet" type="text/css" href="./styles.css" />',
+              ""
+            ));
+        addCSS = !addCSS;
+        console.log(addCSS);
+      }
+    </script>
+  </body>
+</html>
